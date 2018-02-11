@@ -4,7 +4,7 @@ $CONFIGURATION_FILE = "$PSScriptRoot\Config\Script.config.xml"
 
 # Main
 
-$config = Get-Config `
+$config = Get-ScriptConfiguration `
   -configurationFilePath $CONFIGURATION_FILE
 
 $datastore = Get-DatastoreForPurpose `
