@@ -9,6 +9,24 @@
 
 Function Get-DatastoreForPurpose
 {
+  <#
+  .SYNOPSIS
+  Return the datastore for a given purpose
+  
+  .DESCRIPTION
+  This function takes a purpose parameter and returns the corresponding datastore name
+  
+  .PARAMETER purpose
+  The purpose string from the ServiceNow catalog item
+  
+  .PARAMETER xmlConfiguration
+  The XML configuration for this script
+  
+  .EXAMPLE
+  $store = Get-DatastoreForPurpose -purpose 'Development' -xmlConfiguration $config 
+  #>
+
+  [CmdletBinding()]
   Param
   (
     [string]$purpose, 
@@ -28,6 +46,23 @@ Function Get-DatastoreForPurpose
 
 Function Get-TemplateForPlatformType
 {
+  <#
+  .SYNOPSIS
+  Return the template name for a given platform type
+  
+  .DESCRIPTION
+  This function takes a platform type parameter and returns the corresponding build template name
+  
+  .PARAMETER platformType
+  The platform type string from the ServiceNow catalog item
+  
+  .PARAMETER xmlConfiguration
+  The XML configuration for this script
+  
+  .EXAMPLE
+  $store = Get-DatastoreForPlatformType -platformType 'Windows Server' -xmlConfiguration $config
+  #>
+
   Param
   (
     [string]$platformType, 
@@ -47,6 +82,20 @@ Function Get-TemplateForPlatformType
 
 Function Get-ScriptConfiguration
 {
+  <#
+  .SYNOPSIS
+  Loads configuration data from a config file
+  
+  .DESCRIPTION
+  This function takes a path to an XML file and returns an XML document object with the contents of the file
+  
+  .PARAMETER configurationFilePath
+  The XML file to read as configuration data
+  
+  .EXAMPLE
+  $config = Get-ScriptConfiguration -configurationFilePath "$PSScriptRoot\Config\Script.config.xml"
+  #>
+
   Param
   (
     $configurationFilePath
@@ -58,15 +107,5 @@ Function Get-ScriptConfiguration
 
   Return $xmlDocument
 } 
-
-Function Get-Config
-{
-  Param
-  (
-    [string]$configurationFilePath
-  ) 
-
-  return Get-ScriptConfiguration -configurationFilePath $configurationFilePath
-}
 
 # End of file
