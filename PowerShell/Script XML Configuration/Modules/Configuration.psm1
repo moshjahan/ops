@@ -41,7 +41,9 @@ Function Get-DatastoreForPurpose
     {
       Return $datastore.innerText
     }
-  }    
+  }
+
+  Return ''
 }
 
 Function Get-TemplateForPlatformType
@@ -77,7 +79,9 @@ Function Get-TemplateForPlatformType
     {
       Return $template.innerText
     }
-  }    
+  }
+
+  Return ''
 }
 
 Function Get-ScriptConfiguration
