@@ -1,0 +1,42 @@
+<Configuration>
+  <!--
+    Datastore to purpose mappings
+  -->
+  <Datastores>
+    <Datastore Purpose="ISOs and Templates">wknxtdcon01</Datastore>
+    <Datastore Purpose="Development">wknxtdcon02</Datastore>
+    <Datastore Purpose="User Acceptance Testing">wknxtdcon03</Datastore>
+    <Datastore Purpose="Production Support">wknxtdcon04</Datastore>
+    <Datastore Purpose="System Testing">wknxtdcon05</Datastore>
+    <Datastore Purpose="Load Testing">wknxtdcon06</Datastore>
+    <Datastore Purpose="Adhoc">wknxtdcon07</Datastore>
+    <Datastore Purpose="Infrastructure Service">wknxtdcon08</Datastore>
+  </Datastores>
+
+  <!--
+    Templates to platform type mappings
+  -->
+  <Templates>
+    <Template PlatformType="Windows Server">tmpl.Windows_server_2012_R2_v0.3</Template>
+    <Template PlatformType="LAMP Stack">wknxtdcon02</Template>
+    <Template PlatformType="iCABS Database">tmpl.RHEL6.8-iCABS_DB_x86_64_v1.3</Template>
+    <Template PlatformType="iCABS Report Manager">tmpl.RHEL6.8-iCABS_RM_x86_64_v1.3</Template>
+  </Templates>
+
+  <!--
+    Settings specific to environments
+  -->
+  <Environments>
+    <!--
+      Production specific configuration options
+    -->
+    <Production>
+    </Production>
+
+    <!--
+      Non-production specific configuration options
+    -->
+    <NonProduction>
+    </NonProduction>
+  </Environments>
+</Configuration>
